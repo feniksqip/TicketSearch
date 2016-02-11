@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  TSRequest.h
 //  TicketSearch
 //
 //  Created by Andrey on 11.02.16.
 //  Copyright © 2016 Andrey. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-@interface ViewController : UIViewController
-
+@interface TSRequest : NSObject
 
 @end
-

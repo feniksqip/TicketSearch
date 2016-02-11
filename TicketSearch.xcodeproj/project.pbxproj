@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		55FF07AB1C6D053B0089728A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FF07AA1C6D053B0089728A /* main.m */; };
 		55FF07AE1C6D053B0089728A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FF07AD1C6D053B0089728A /* AppDelegate.m */; };
-		55FF07B11C6D053B0089728A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FF07B01C6D053B0089728A /* ViewController.m */; };
+		55FF07B11C6D053B0089728A /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FF07B01C6D053B0089728A /* RootViewController.m */; };
 		55FF07B41C6D053B0089728A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55FF07B21C6D053B0089728A /* Main.storyboard */; };
 		55FF07B61C6D053B0089728A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55FF07B51C6D053B0089728A /* Assets.xcassets */; };
 		55FF07B91C6D053B0089728A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55FF07B71C6D053B0089728A /* LaunchScreen.storyboard */; };
 		55FF07C41C6D053B0089728A /* TicketSearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FF07C31C6D053B0089728A /* TicketSearchTests.m */; };
 		55FF07CF1C6D053B0089728A /* TicketSearchUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FF07CE1C6D053B0089728A /* TicketSearchUITests.m */; };
+		55FF07DF1C6D0B6E0089728A /* TSRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FF07DE1C6D0B6E0089728A /* TSRequest.m */; };
+		55FF07E41C6D0C4E0089728A /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FF07E31C6D0C4E0089728A /* CalendarViewController.m */; };
+		55FF07E71C6D132A0089728A /* TSTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FF07E61C6D132A0089728A /* TSTicket.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +42,8 @@
 		55FF07AA1C6D053B0089728A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		55FF07AC1C6D053B0089728A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		55FF07AD1C6D053B0089728A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		55FF07AF1C6D053B0089728A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		55FF07B01C6D053B0089728A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		55FF07AF1C6D053B0089728A /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		55FF07B01C6D053B0089728A /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		55FF07B31C6D053B0089728A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		55FF07B51C6D053B0089728A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55FF07B81C6D053B0089728A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +54,12 @@
 		55FF07CA1C6D053B0089728A /* TicketSearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TicketSearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55FF07CE1C6D053B0089728A /* TicketSearchUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketSearchUITests.m; sourceTree = "<group>"; };
 		55FF07D01C6D053B0089728A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55FF07DD1C6D0B6E0089728A /* TSRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSRequest.h; sourceTree = "<group>"; };
+		55FF07DE1C6D0B6E0089728A /* TSRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSRequest.m; sourceTree = "<group>"; };
+		55FF07E21C6D0C4E0089728A /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
+		55FF07E31C6D0C4E0089728A /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
+		55FF07E51C6D132A0089728A /* TSTicket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSTicket.h; sourceTree = "<group>"; };
+		55FF07E61C6D132A0089728A /* TSTicket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSTicket.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +110,9 @@
 		55FF07A81C6D053B0089728A /* TicketSearch */ = {
 			isa = PBXGroup;
 			children = (
-				55FF07AC1C6D053B0089728A /* AppDelegate.h */,
-				55FF07AD1C6D053B0089728A /* AppDelegate.m */,
-				55FF07AF1C6D053B0089728A /* ViewController.h */,
-				55FF07B01C6D053B0089728A /* ViewController.m */,
+				55FF07E11C6D0BD70089728A /* Controllers */,
+				55FF07E01C6D0BA70089728A /* Other */,
+				55FF07DC1C6D0AFF0089728A /* Network */,
 				55FF07B21C6D053B0089728A /* Main.storyboard */,
 				55FF07B51C6D053B0089728A /* Assets.xcassets */,
 				55FF07B71C6D053B0089728A /* LaunchScreen.storyboard */,
@@ -117,6 +125,8 @@
 		55FF07A91C6D053B0089728A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				55FF07AC1C6D053B0089728A /* AppDelegate.h */,
+				55FF07AD1C6D053B0089728A /* AppDelegate.m */,
 				55FF07AA1C6D053B0089728A /* main.m */,
 			);
 			name = "Supporting Files";
@@ -138,6 +148,35 @@
 				55FF07D01C6D053B0089728A /* Info.plist */,
 			);
 			path = TicketSearchUITests;
+			sourceTree = "<group>";
+		};
+		55FF07DC1C6D0AFF0089728A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				55FF07DD1C6D0B6E0089728A /* TSRequest.h */,
+				55FF07DE1C6D0B6E0089728A /* TSRequest.m */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		55FF07E01C6D0BA70089728A /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				55FF07E51C6D132A0089728A /* TSTicket.h */,
+				55FF07E61C6D132A0089728A /* TSTicket.m */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		55FF07E11C6D0BD70089728A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				55FF07AF1C6D053B0089728A /* RootViewController.h */,
+				55FF07B01C6D053B0089728A /* RootViewController.m */,
+				55FF07E21C6D0C4E0089728A /* CalendarViewController.h */,
+				55FF07E31C6D0C4E0089728A /* CalendarViewController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,8 +309,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55FF07B11C6D053B0089728A /* ViewController.m in Sources */,
+				55FF07B11C6D053B0089728A /* RootViewController.m in Sources */,
 				55FF07AE1C6D053B0089728A /* AppDelegate.m in Sources */,
+				55FF07E71C6D132A0089728A /* TSTicket.m in Sources */,
+				55FF07DF1C6D0B6E0089728A /* TSRequest.m in Sources */,
+				55FF07E41C6D0C4E0089728A /* CalendarViewController.m in Sources */,
 				55FF07AB1C6D053B0089728A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

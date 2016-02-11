@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TsJ-Qf-P7s">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--TicketSearch-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RootViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,79 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ERv-1k-B3x">
+                                <rect key="frame" x="240" y="455" width="120" height="50"/>
+                                <state key="normal" title="Calendar"/>
+                                <connections>
+                                    <segue destination="Zie-M7-Zd4" kind="presentation" id="Z4Y-u7-aPB"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ERv-1k-B3x" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="05T-pe-DdU"/>
+                            <constraint firstItem="ERv-1k-B3x" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Epj-vh-1e1"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="TicketSearch" id="HtS-fU-Vu1"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1057" y="424"/>
+        </scene>
+        <!--Calendar View Controller-->
+        <scene sceneID="ehh-ks-ksH">
+            <objects>
+                <viewController id="Zie-M7-Zd4" customClass="CalendarViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9xX-lz-hhL"/>
+                        <viewControllerLayoutGuide type="bottom" id="wW1-wJ-vH4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cly-VS-0wa">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cEj-7E-VCg">
+                                <rect key="frame" x="520" y="28" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="W9p-TY-coP"/>
+                                    <constraint firstAttribute="height" constant="60" id="hqg-P8-q3B"/>
+                                </constraints>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="dismissButtonAction:" destination="Zie-M7-Zd4" eventType="touchUpInside" id="x1o-vu-0Ts"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cEj-7E-VCg" firstAttribute="top" secondItem="9xX-lz-hhL" secondAttribute="bottom" constant="8" id="F5M-Sk-U9Y"/>
+                            <constraint firstItem="cEj-7E-VCg" firstAttribute="trailing" secondItem="cly-VS-0wa" secondAttribute="trailingMargin" id="pva-uQ-At5"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3dY-6j-TIe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1753" y="424"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="L7h-xZ-fxl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TsJ-Qf-P7s" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oVz-VX-pEO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="URv-7O-Gv3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0xB-Vc-dbW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="173" y="594"/>
         </scene>
     </scenes>
 </document>
