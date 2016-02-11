@@ -1,0 +1,521 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		55FF07AB1C6D053B0089728A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FF07AA1C6D053B0089728A /* main.m */; };
+		55FF07AE1C6D053B0089728A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FF07AD1C6D053B0089728A /* AppDelegate.m */; };
+		55FF07B11C6D053B0089728A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FF07B01C6D053B0089728A /* ViewController.m */; };
+		55FF07B41C6D053B0089728A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55FF07B21C6D053B0089728A /* Main.storyboard */; };
+		55FF07B61C6D053B0089728A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55FF07B51C6D053B0089728A /* Assets.xcassets */; };
+		55FF07B91C6D053B0089728A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55FF07B71C6D053B0089728A /* LaunchScreen.storyboard */; };
+		55FF07C41C6D053B0089728A /* TicketSearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FF07C31C6D053B0089728A /* TicketSearchTests.m */; };
+		55FF07CF1C6D053B0089728A /* TicketSearchUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FF07CE1C6D053B0089728A /* TicketSearchUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		55FF07C01C6D053B0089728A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 55FF079E1C6D053B0089728A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55FF07A51C6D053B0089728A;
+			remoteInfo = TicketSearch;
+		};
+		55FF07CB1C6D053B0089728A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 55FF079E1C6D053B0089728A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55FF07A51C6D053B0089728A;
+			remoteInfo = TicketSearch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		55FF07A61C6D053B0089728A /* TicketSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicketSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		55FF07AA1C6D053B0089728A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		55FF07AC1C6D053B0089728A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		55FF07AD1C6D053B0089728A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		55FF07AF1C6D053B0089728A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		55FF07B01C6D053B0089728A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		55FF07B31C6D053B0089728A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		55FF07B51C6D053B0089728A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		55FF07B81C6D053B0089728A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		55FF07BA1C6D053B0089728A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55FF07BF1C6D053B0089728A /* TicketSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TicketSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		55FF07C31C6D053B0089728A /* TicketSearchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketSearchTests.m; sourceTree = "<group>"; };
+		55FF07C51C6D053B0089728A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55FF07CA1C6D053B0089728A /* TicketSearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TicketSearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		55FF07CE1C6D053B0089728A /* TicketSearchUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketSearchUITests.m; sourceTree = "<group>"; };
+		55FF07D01C6D053B0089728A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		55FF07A31C6D053B0089728A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55FF07BC1C6D053B0089728A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55FF07C71C6D053B0089728A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		55FF079D1C6D053B0089728A = {
+			isa = PBXGroup;
+			children = (
+				55FF07A81C6D053B0089728A /* TicketSearch */,
+				55FF07C21C6D053B0089728A /* TicketSearchTests */,
+				55FF07CD1C6D053B0089728A /* TicketSearchUITests */,
+				55FF07A71C6D053B0089728A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		55FF07A71C6D053B0089728A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				55FF07A61C6D053B0089728A /* TicketSearch.app */,
+				55FF07BF1C6D053B0089728A /* TicketSearchTests.xctest */,
+				55FF07CA1C6D053B0089728A /* TicketSearchUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		55FF07A81C6D053B0089728A /* TicketSearch */ = {
+			isa = PBXGroup;
+			children = (
+				55FF07AC1C6D053B0089728A /* AppDelegate.h */,
+				55FF07AD1C6D053B0089728A /* AppDelegate.m */,
+				55FF07AF1C6D053B0089728A /* ViewController.h */,
+				55FF07B01C6D053B0089728A /* ViewController.m */,
+				55FF07B21C6D053B0089728A /* Main.storyboard */,
+				55FF07B51C6D053B0089728A /* Assets.xcassets */,
+				55FF07B71C6D053B0089728A /* LaunchScreen.storyboard */,
+				55FF07BA1C6D053B0089728A /* Info.plist */,
+				55FF07A91C6D053B0089728A /* Supporting Files */,
+			);
+			path = TicketSearch;
+			sourceTree = "<group>";
+		};
+		55FF07A91C6D053B0089728A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				55FF07AA1C6D053B0089728A /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		55FF07C21C6D053B0089728A /* TicketSearchTests */ = {
+			isa = PBXGroup;
+			children = (
+				55FF07C31C6D053B0089728A /* TicketSearchTests.m */,
+				55FF07C51C6D053B0089728A /* Info.plist */,
+			);
+			path = TicketSearchTests;
+			sourceTree = "<group>";
+		};
+		55FF07CD1C6D053B0089728A /* TicketSearchUITests */ = {
+			isa = PBXGroup;
+			children = (
+				55FF07CE1C6D053B0089728A /* TicketSearchUITests.m */,
+				55FF07D01C6D053B0089728A /* Info.plist */,
+			);
+			path = TicketSearchUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		55FF07A51C6D053B0089728A /* TicketSearch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55FF07D31C6D053B0089728A /* Build configuration list for PBXNativeTarget "TicketSearch" */;
+			buildPhases = (
+				55FF07A21C6D053B0089728A /* Sources */,
+				55FF07A31C6D053B0089728A /* Frameworks */,
+				55FF07A41C6D053B0089728A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TicketSearch;
+			productName = TicketSearch;
+			productReference = 55FF07A61C6D053B0089728A /* TicketSearch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		55FF07BE1C6D053B0089728A /* TicketSearchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55FF07D61C6D053B0089728A /* Build configuration list for PBXNativeTarget "TicketSearchTests" */;
+			buildPhases = (
+				55FF07BB1C6D053B0089728A /* Sources */,
+				55FF07BC1C6D053B0089728A /* Frameworks */,
+				55FF07BD1C6D053B0089728A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				55FF07C11C6D053B0089728A /* PBXTargetDependency */,
+			);
+			name = TicketSearchTests;
+			productName = TicketSearchTests;
+			productReference = 55FF07BF1C6D053B0089728A /* TicketSearchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		55FF07C91C6D053B0089728A /* TicketSearchUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55FF07D91C6D053B0089728A /* Build configuration list for PBXNativeTarget "TicketSearchUITests" */;
+			buildPhases = (
+				55FF07C61C6D053B0089728A /* Sources */,
+				55FF07C71C6D053B0089728A /* Frameworks */,
+				55FF07C81C6D053B0089728A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				55FF07CC1C6D053B0089728A /* PBXTargetDependency */,
+			);
+			name = TicketSearchUITests;
+			productName = TicketSearchUITests;
+			productReference = 55FF07CA1C6D053B0089728A /* TicketSearchUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		55FF079E1C6D053B0089728A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = Andrey;
+				TargetAttributes = {
+					55FF07A51C6D053B0089728A = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					55FF07BE1C6D053B0089728A = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 55FF07A51C6D053B0089728A;
+					};
+					55FF07C91C6D053B0089728A = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 55FF07A51C6D053B0089728A;
+					};
+				};
+			};
+			buildConfigurationList = 55FF07A11C6D053B0089728A /* Build configuration list for PBXProject "TicketSearch" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 55FF079D1C6D053B0089728A;
+			productRefGroup = 55FF07A71C6D053B0089728A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				55FF07A51C6D053B0089728A /* TicketSearch */,
+				55FF07BE1C6D053B0089728A /* TicketSearchTests */,
+				55FF07C91C6D053B0089728A /* TicketSearchUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		55FF07A41C6D053B0089728A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55FF07B91C6D053B0089728A /* LaunchScreen.storyboard in Resources */,
+				55FF07B61C6D053B0089728A /* Assets.xcassets in Resources */,
+				55FF07B41C6D053B0089728A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55FF07BD1C6D053B0089728A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55FF07C81C6D053B0089728A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		55FF07A21C6D053B0089728A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55FF07B11C6D053B0089728A /* ViewController.m in Sources */,
+				55FF07AE1C6D053B0089728A /* AppDelegate.m in Sources */,
+				55FF07AB1C6D053B0089728A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55FF07BB1C6D053B0089728A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55FF07C41C6D053B0089728A /* TicketSearchTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55FF07C61C6D053B0089728A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55FF07CF1C6D053B0089728A /* TicketSearchUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		55FF07C11C6D053B0089728A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 55FF07A51C6D053B0089728A /* TicketSearch */;
+			targetProxy = 55FF07C01C6D053B0089728A /* PBXContainerItemProxy */;
+		};
+		55FF07CC1C6D053B0089728A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 55FF07A51C6D053B0089728A /* TicketSearch */;
+			targetProxy = 55FF07CB1C6D053B0089728A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		55FF07B21C6D053B0089728A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				55FF07B31C6D053B0089728A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		55FF07B71C6D053B0089728A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				55FF07B81C6D053B0089728A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		55FF07D11C6D053B0089728A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		55FF07D21C6D053B0089728A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		55FF07D41C6D053B0089728A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TicketSearch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = andreyb.com.TicketSearch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		55FF07D51C6D053B0089728A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TicketSearch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = andreyb.com.TicketSearch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		55FF07D71C6D053B0089728A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TicketSearchTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = andreyb.com.TicketSearchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TicketSearch.app/TicketSearch";
+			};
+			name = Debug;
+		};
+		55FF07D81C6D053B0089728A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TicketSearchTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = andreyb.com.TicketSearchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TicketSearch.app/TicketSearch";
+			};
+			name = Release;
+		};
+		55FF07DA1C6D053B0089728A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TicketSearchUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = andreyb.com.TicketSearchUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TicketSearch;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		55FF07DB1C6D053B0089728A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TicketSearchUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = andreyb.com.TicketSearchUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TicketSearch;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		55FF07A11C6D053B0089728A /* Build configuration list for PBXProject "TicketSearch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55FF07D11C6D053B0089728A /* Debug */,
+				55FF07D21C6D053B0089728A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55FF07D31C6D053B0089728A /* Build configuration list for PBXNativeTarget "TicketSearch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55FF07D41C6D053B0089728A /* Debug */,
+				55FF07D51C6D053B0089728A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		55FF07D61C6D053B0089728A /* Build configuration list for PBXNativeTarget "TicketSearchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55FF07D71C6D053B0089728A /* Debug */,
+				55FF07D81C6D053B0089728A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		55FF07D91C6D053B0089728A /* Build configuration list for PBXNativeTarget "TicketSearchUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55FF07DA1C6D053B0089728A /* Debug */,
+				55FF07DB1C6D053B0089728A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 55FF079E1C6D053B0089728A /* Project object */;
+}
