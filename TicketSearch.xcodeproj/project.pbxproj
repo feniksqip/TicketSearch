@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		552AB5131C6DD9EA00DA0C49 /* TSResponseData.m in Sources */ = {isa = PBXBuildFile; fileRef = 552AB5121C6DD9EA00DA0C49 /* TSResponseData.m */; };
 		55FF07AB1C6D053B0089728A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FF07AA1C6D053B0089728A /* main.m */; };
 		55FF07AE1C6D053B0089728A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FF07AD1C6D053B0089728A /* AppDelegate.m */; };
 		55FF07B11C6D053B0089728A /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FF07B01C6D053B0089728A /* RootViewController.m */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		552AB5111C6DD9E900DA0C49 /* TSResponseData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSResponseData.h; sourceTree = "<group>"; };
+		552AB5121C6DD9EA00DA0C49 /* TSResponseData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSResponseData.m; sourceTree = "<group>"; };
 		55FF07A61C6D053B0089728A /* TicketSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicketSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55FF07AA1C6D053B0089728A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		55FF07AC1C6D053B0089728A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -155,6 +158,8 @@
 			children = (
 				55FF07DD1C6D0B6E0089728A /* TSRequest.h */,
 				55FF07DE1C6D0B6E0089728A /* TSRequest.m */,
+				552AB5111C6DD9E900DA0C49 /* TSResponseData.h */,
+				552AB5121C6DD9EA00DA0C49 /* TSResponseData.m */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -313,6 +318,7 @@
 				55FF07AE1C6D053B0089728A /* AppDelegate.m in Sources */,
 				55FF07E71C6D132A0089728A /* TSTicket.m in Sources */,
 				55FF07DF1C6D0B6E0089728A /* TSRequest.m in Sources */,
+				552AB5131C6DD9EA00DA0C49 /* TSResponseData.m in Sources */,
 				55FF07E41C6D0C4E0089728A /* CalendarViewController.m in Sources */,
 				55FF07AB1C6D053B0089728A /* main.m in Sources */,
 			);
@@ -542,6 +548,7 @@
 				55FF07D51C6D053B0089728A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		55FF07D61C6D053B0089728A /* Build configuration list for PBXNativeTarget "TicketSearchTests" */ = {
 			isa = XCConfigurationList;
@@ -550,6 +557,7 @@
 				55FF07D81C6D053B0089728A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		55FF07D91C6D053B0089728A /* Build configuration list for PBXNativeTarget "TicketSearchUITests" */ = {
 			isa = XCConfigurationList;
@@ -558,6 +566,7 @@
 				55FF07DB1C6D053B0089728A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

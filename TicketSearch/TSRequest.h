@@ -10,4 +10,7 @@
 
 @interface TSRequest : NSObject
 
+
+-(void)sendRequestToServer;
+
 @end
