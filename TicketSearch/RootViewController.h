@@ -10,6 +10,11 @@
 
 @interface RootViewController : UIViewController
 
+- (IBAction)ticketClassAction:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UILabel *passengersLabel;
+- (IBAction)passengersNumberAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UIStepper *passengersOutlet;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *ticketClassOutlet;
 @end
 

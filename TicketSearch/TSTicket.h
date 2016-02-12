@@ -22,9 +22,17 @@
 @property (nonatomic) uint passengers; // 1-6
 
 
-@property (nonatomic) char ticketClass; // economic or business
+@property (nonatomic) char ticketClass; // economic or business // E or B
 
+/*
+keys = @"leavingFrom"
+@"goingTo"
+@"departingDate"
+@"passengers"
+@"ticketClass"
+ */
 
++(TSTicket *)sharedInstance;
 
 
 @end

@@ -17,9 +17,18 @@
 
 @implementation RootViewController
 
+@synthesize passengersLabel;
+@synthesize passengersOutlet; // Stepper
+@synthesize ticketClassOutlet; // SegmentedControl
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    // Init params:
+    [passengersLabel setText:@"1"];
+    
+    
     
     
     TSTicket *aTicket = [TSTicket new];
@@ -30,7 +39,7 @@
     
     
     TSRequest *aRequest = [TSRequest new];
-    [aRequest sendRequestToServer];
+   // [aRequest sendRequestToServer];
     
     
     
@@ -65,6 +74,39 @@
     });
     
 }
+
+
+- (IBAction)ticketClassAction:(id)sender {
+    
+    if (ticketClassOutlet.selectedSegmentIndex == 0) {
+        [[TSTicket sharedInstance] setTicketClass:'E'];
+        NSLog(@"TicketClass : %@", @"Economy" );
+        
+    } else if (ticketClassOutlet.selectedSegmentIndex == 1) {
+        [[TSTicket sharedInstance] setTicketClass:'B'];
+        NSLog(@"TicketClass : %@", @"Business" );
+    }
+    
+    // Or ...
+    /*
+    int clickedSegment = [sender selectedSegmentIndex];
+    NSArray *arr = [ticketClassOutlet valueForKey:@"segments"];
+    NSString *str = [[arr objectAtIndex:clickedSegment] valueForKey:@"objectValue"];
+    NSLog(@"TicketClass : %@", str);
+    */
+    
+}
+- (IBAction)passengersNumberAction:(id)sender {
+    [passengersLabel setText: [NSString stringWithFormat:@"%.f", [passengersOutlet value] ]];
+    [[TSTicket sharedInstance] setPassengers: (uint) [passengersOutlet value]];
+    
+//    TSTicket *aTicket = [TSTicket sharedInstance];
+    
+    NSLog(@"Passengers : %@",  [passengersOutlet value]);
+    
+    
+}
+
 
 
 @end
