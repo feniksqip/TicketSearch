@@ -15,6 +15,9 @@
 @synthesize passengers;
 @synthesize ticketClass;
 
+@synthesize cityCodeLeavingFrom, cityCodeGoingTo;
+//@synthesize anAirport;
+
 +(TSTicket *)sharedInstance {
     
     static TSTicket *sharedInstance = nil;
@@ -39,6 +42,10 @@
         departingDate = [NSDate date];
         passengers = 1;
         ticketClass = 'E';
+        
+        cityCodeLeavingFrom = @""; //MOW
+        cityCodeGoingTo = @""; //MOW
+//        anAirport = @""; // not used
         
     }
     

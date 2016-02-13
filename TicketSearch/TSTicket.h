@@ -24,6 +24,11 @@
 
 @property (nonatomic) char ticketClass; // economic or business // E or B
 
+@property (strong, nonatomic) NSString *cityCodeLeavingFrom;
+@property (strong, nonatomic) NSString *cityCodeGoingTo;
+
+//@property (strong, nonatomic) NSString *anAirport; // not used
+
 /*
 keys = @"leavingFrom"
 @"goingTo"

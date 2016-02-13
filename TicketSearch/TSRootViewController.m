@@ -1,27 +1,28 @@
 //
-//  RootViewController.m
+//  TSRootViewController.m
 //  TicketSearch
 //
 //  Created by Andrey on 11.02.16.
 //  Copyright © 2016 Andrey. All rights reserved.
 //
 
-#import "RootViewController.h"
+#import "TSRootViewController.h"
 
 #import "TSTicket.h"
 #import "TSRequest.h"
 #import "TSCityTableViewController.h"
 
-@interface RootViewController ()
+@interface TSRootViewController ()
 
 @end
 
-@implementation RootViewController
+@implementation TSRootViewController
 
-@synthesize passengersLabel;
+@synthesize passengersLabel; // Passengers number
 @synthesize passengersOutlet; // Stepper
 @synthesize ticketClassOutlet; // SegmentedControl
-@synthesize leavingFromLabel, goingToLabel;
+@synthesize leavingFromLabel, goingToLabel; // Cities
+@synthesize findTicketsButton; // Find Button
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -55,6 +56,12 @@
     TSTicket *aTicket = [TSTicket sharedInstance];
     leavingFromLabel.text = aTicket.leavingFrom;
     goingToLabel.text = aTicket.goingTo;
+    
+    if ([aTicket.cityCodeLeavingFrom isEqualToString:@""] && [aTicket.cityCodeGoingTo isEqualToString:@""]) {
+        [findTicketsButton setEnabled:NO];
+    } else {
+        [findTicketsButton setEnabled:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -69,8 +76,6 @@
 
 //    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"First request Done !!!" message:@"Text received ..." delegate:self cancelButtonTitle:@"Done!" otherButtonTitles:nil, nil];
 //    [alertView show];
-    
-    
     
     dispatch_async(dispatch_get_main_queue(), ^{
         UIAlertView *theAlert = [[UIAlertView alloc] initWithTitle:@"First request Done !!!"
@@ -109,18 +114,22 @@
     [[TSTicket sharedInstance] setPassengers: (uint) [passengersOutlet value]];
     
 //    TSTicket *aTicket = [TSTicket sharedInstance];
-    
     NSLog(@"Passengers : %d",  (int)[passengersOutlet value]);
-    
-    
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    NSArray *anCitiesArrat = [[TSResponseData sharedInstance] aCityArray];
+//    NSArray *anCitiesArray = [[TSResponseData sharedInstance] aCityArray];
 //    [segue.destinationViewController setValue:<#(nullable id)#> forKey:<#(nonnull NSString *)#>];
-    [segue.destinationViewController setSourceSegueId:segue.identifier];
+    if ([segue.identifier isEqualToString:@"leavingFrom"] || [segue.identifier isEqualToString:@"goingTo"]) {
+            [segue.destinationViewController setSourceSegueId:segue.identifier];
+    }
+    
 }
 
 
+
+- (IBAction)setDepartureDateAction:(id)sender {
+    
+}
 
 @end

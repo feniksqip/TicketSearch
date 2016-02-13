@@ -1,5 +1,5 @@
 //
-//  RootViewController.h
+//  TSRootViewController.h
 //  TicketSearch
 //
 //  Created by Andrey on 11.02.16.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RootViewController : UIViewController
+@interface TSRootViewController : UIViewController
 
 - (IBAction)ticketClassAction:(id)sender;
 
@@ -18,5 +18,7 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *ticketClassOutlet;
 @property (weak, nonatomic) IBOutlet UILabel *leavingFromLabel;
 @property (weak, nonatomic) IBOutlet UILabel *goingToLabel;
+@property (weak, nonatomic) IBOutlet UIButton *findTicketsButton;
+- (IBAction)setDepartureDateAction:(id)sender;
 @end
 

@@ -9,7 +9,7 @@
         <!--TicketSearch-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="RootViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TSRootViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -18,31 +18,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hVU-E8-9D8">
-                                <rect key="frame" x="90" y="393" width="101" height="30"/>
-                                <state key="normal" title="Choose City"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ERv-1k-B3x">
-                                <rect key="frame" x="269" y="393" width="62" height="30"/>
-                                <state key="normal" title="Calendar"/>
-                                <connections>
-                                    <segue destination="Zie-M7-Zd4" kind="presentation" id="Z4Y-u7-aPB"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="leavingFrom:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcI-Tv-AvI">
-                                <rect key="frame" x="12" y="128" width="98" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Город отправления:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcI-Tv-AvI">
+                                <rect key="frame" x="7" y="128" width="98" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="goingTo:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFM-Pv-rU0">
-                                <rect key="frame" x="12" y="172" width="67" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Город назначения:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFM-Pv-rU0">
+                                <rect key="frame" x="7" y="172" width="98" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tWb-XF-O6w">
-                                <rect key="frame" x="201" y="206" width="151" height="29"/>
+                                <rect key="frame" x="241" y="204" width="151" height="29"/>
                                 <segments>
                                     <segment title="Economy"/>
                                     <segment title="Business"/>
@@ -51,54 +40,86 @@
                                     <action selector="ticketClassAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="dMH-zD-ADy"/>
                                 </connections>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ticketClass:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ocl-vZ-GFy">
-                                <rect key="frame" x="12" y="211" width="89" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Класс билетов:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ocl-vZ-GFy">
+                                <rect key="frame" x="7" y="209" width="98" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number of Passengers:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzr-D6-t2Q">
-                                <rect key="frame" x="12" y="299" width="179" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Количество пассажиров:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzr-D6-t2Q">
+                                <rect key="frame" x="7" y="300" width="212" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tr1-kd-x0Z">
-                                <rect key="frame" x="201" y="295" width="8" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="241" y="295" width="32" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="6" translatesAutoresizingMaskIntoConstraints="NO" id="1mJ-9e-UVD">
-                                <rect key="frame" x="79" y="336" width="94" height="29"/>
+                                <rect key="frame" x="292" y="296" width="94" height="29"/>
                                 <connections>
                                     <action selector="passengersNumberAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="vhB-Ca-5Ec"/>
                                 </connections>
                             </stepper>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ltw-QY-z13">
-                                <rect key="frame" x="261" y="124" width="133" height="30"/>
-                                <state key="normal" title="Leaving From"/>
-                                <connections>
-                                    <segue destination="eQb-PH-Jaz" kind="show" identifier="leavingFrom" id="CzW-NI-W6D"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Выберите город" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9m-94-whN">
                                 <rect key="frame" x="119" y="128" width="148" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Выберите город" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nw8-tJ-our">
                                 <rect key="frame" x="119" y="172" width="148" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TpE-7G-hAb">
                                 <rect key="frame" x="261" y="168" width="133" height="30"/>
-                                <state key="normal" title="Going To"/>
+                                <state key="normal" title="Выбрать город"/>
                                 <connections>
                                     <segue destination="eQb-PH-Jaz" kind="show" identifier="goingTo" id="nFu-uU-Lo9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jS3-8d-B7t">
+                                <rect key="frame" x="129" y="389" width="156" height="30"/>
+                                <state key="normal" title="Найти авиабилеты"/>
+                                <connections>
+                                    <segue destination="E9q-Z4-Npk" kind="show" id="Tz4-nx-OTf"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Дата вылета:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufK-Xo-gOS">
+                                <rect key="frame" x="7" y="257" width="98" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Выберите дату" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WxA-mx-G2N">
+                                <rect key="frame" x="119" y="257" width="148" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iv4-Ph-ks1">
+                                <rect key="frame" x="261" y="253" width="133" height="30"/>
+                                <state key="normal" title="Выбрать дату"/>
+                                <connections>
+                                    <action selector="setDepartureDateAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="15m-44-4FZ"/>
+                                </connections>
+                            </button>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="fX3-Eh-rYk">
+                                <rect key="frame" x="0.0" y="384" width="134" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="477082794.81502098">
+                                    <!--2016-02-13 18:59:54 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ltw-QY-z13">
+                                <rect key="frame" x="261" y="124" width="133" height="30"/>
+                                <state key="normal" title="Выбрать город"/>
+                                <connections>
+                                    <segue destination="eQb-PH-Jaz" kind="show" identifier="leavingFrom" id="CzW-NI-W6D"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -106,6 +127,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="TicketSearch" id="HtS-fU-Vu1"/>
                     <connections>
+                        <outlet property="findTicketsButton" destination="jS3-8d-B7t" id="4PG-3f-9Rs"/>
                         <outlet property="goingToLabel" destination="nw8-tJ-our" id="C3w-cS-tCi"/>
                         <outlet property="leavingFromLabel" destination="o9m-94-whN" id="JqU-Jy-hVr"/>
                         <outlet property="passengersLabel" destination="Tr1-kd-x0Z" id="kjh-10-ACN"/>
@@ -155,6 +177,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PrN-lX-SVB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1575" y="-260"/>
+        </scene>
+        <!--Find Tickets View Controller-->
+        <scene sceneID="bHY-fR-3Cg">
+            <objects>
+                <viewController id="E9q-Z4-Npk" customClass="TSFindTicketsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="X9H-S3-vmO"/>
+                        <viewControllerLayoutGuide type="bottom" id="IJ5-a2-JIs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YEE-jk-lxM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vYl-Du-X8R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="875" y="760"/>
         </scene>
         <!--Calendar View Controller-->
         <scene sceneID="ehh-ks-ksH">

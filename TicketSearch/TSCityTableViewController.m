@@ -24,8 +24,9 @@
     
     NSMutableArray *aCities;
     NSMutableArray *aCountries;
+    NSMutableArray *aCityCodes;
     
-    NSArray *tempArr;
+//    NSArray *tempArr;
     
 }
 
@@ -41,7 +42,7 @@
     
 //    NSArray *anCitiesArrat = [[TSResponseData sharedInstance] aCityArray];
     
-    tempArr = @[@"1111111", @"22222", @"3333333", @"444444", @"5", @"66666", @"777777"];
+//    tempArr = @[@"1111111", @"22222", @"3333333", @"444444", @"5", @"66666", @"777777"];
     
     
     
@@ -83,7 +84,7 @@
     
     
     if ( [aCities count] != 0) {
-        NSString *finalLabelString = [NSString stringWithFormat:@"%@,%@",[aCities objectAtIndex:indexPath.row],[aCountries objectAtIndex:indexPath.row]];
+        NSString *finalLabelString = [NSString stringWithFormat:@"%@, %@",[aCities objectAtIndex:indexPath.row],[aCountries objectAtIndex:indexPath.row]];
         cell.textLabel.text = finalLabelString;
     } else {
 //        cell.textLabel.text = [tempArr objectAtIndex:indexPath.row];
@@ -101,10 +102,15 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     TSTicket *aTicket = [TSTicket sharedInstance];
+    
+    NSString *aFinalCityString = [NSString stringWithFormat:@"%@, %@", [aCities objectAtIndex:indexPath.row], [aCountries objectAtIndex:indexPath.row] ];
+    
     if ([_sourceSegueId isEqualToString:@"leavingFrom"]) {
-        [aTicket setLeavingFrom:[aCities objectAtIndex:indexPath.row]];
+        [aTicket setLeavingFrom:aFinalCityString];
+        [aTicket setCityCodeLeavingFrom:[aCityCodes objectAtIndex:indexPath.row]];
     } else if ([_sourceSegueId isEqualToString:@"goingTo"]) {
-        [aTicket setGoingTo:[aCities objectAtIndex:indexPath.row]];
+        [aTicket setGoingTo:aFinalCityString];
+        [aTicket setCityCodeGoingTo:[aCityCodes objectAtIndex:indexPath.row]];
     }
 //    [aTicket setLeavingFrom:[aCities objectAtIndex:indexPath.row]];
     
@@ -246,23 +252,23 @@
     
     NSArray *anArray = [NSArray arrayWithArray: [aDic objectForKey:@"Array"] ];
     
-//    NSMutableArray *
     aCities = [NSMutableArray new];
-//    NSMutableArray *
     aCountries = [NSMutableArray new];
+    aCityCodes = [NSMutableArray new];
     
     for (id obj in anArray) {
         [aCities addObject:[obj objectForKey:@"City"]];
         [aCountries addObject:[obj objectForKey:@"Country"]];
+        [aCityCodes addObject:[obj objectForKey:@"CityCode"]];
     }
     
     
    // [self.tableView beginUpdates];
     // Build the two index paths
-    NSIndexPath* indexPath1 = [NSIndexPath indexPathForRow:0 inSection:0];
-    NSIndexPath* indexPath2 = [NSIndexPath indexPathForRow:[aCities count] inSection:0];
+//    NSIndexPath* indexPath1 = [NSIndexPath indexPathForRow:0 inSection:0];
+//    NSIndexPath* indexPath2 = [NSIndexPath indexPathForRow:[aCities count] inSection:0];
     // Add them in an index path array
-    NSArray* indexArray = [NSArray arrayWithObjects:indexPath1, indexPath2, nil];
+//    NSArray* indexArray = [NSArray arrayWithObjects:indexPath1, indexPath2, nil];
     // Launch reload for the two index path
 //    for (int i = 0; i < [aCities count]; i++) {
 //    [self.tableView set];
