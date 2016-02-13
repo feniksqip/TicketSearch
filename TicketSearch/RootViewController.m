@@ -10,6 +10,7 @@
 
 #import "TSTicket.h"
 #import "TSRequest.h"
+#import "TSCityTableViewController.h"
 
 @interface RootViewController ()
 
@@ -20,6 +21,7 @@
 @synthesize passengersLabel;
 @synthesize passengersOutlet; // Stepper
 @synthesize ticketClassOutlet; // SegmentedControl
+@synthesize leavingFromLabel, goingToLabel;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -47,6 +49,12 @@
                                              selector:@selector(firstRequestDone)
                                                  name:@"NSURLConnectionDidFinishLoading"
                                                object:nil];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    TSTicket *aTicket = [TSTicket sharedInstance];
+    leavingFromLabel.text = aTicket.leavingFrom;
+    goingToLabel.text = aTicket.goingTo;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -102,9 +110,15 @@
     
 //    TSTicket *aTicket = [TSTicket sharedInstance];
     
-    NSLog(@"Passengers : %@",  [passengersOutlet value]);
+    NSLog(@"Passengers : %d",  (int)[passengersOutlet value]);
     
     
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    NSArray *anCitiesArrat = [[TSResponseData sharedInstance] aCityArray];
+//    [segue.destinationViewController setValue:<#(nullable id)#> forKey:<#(nonnull NSString *)#>];
+    [segue.destinationViewController setSourceSegueId:segue.identifier];
 }
 
 

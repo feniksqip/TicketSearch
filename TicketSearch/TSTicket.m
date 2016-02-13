@@ -32,8 +32,10 @@
 -(id)init {
     if (self = [super init] ) {
         // init
-        leavingFrom = @"Moscow";
-        goingTo = @"Paris";
+//        leavingFrom = @"Moscow";
+//        goingTo = @"Paris";
+        leavingFrom = @"Введите город отправления";
+        goingTo = @"Введите город назначения";
         departingDate = [NSDate date];
         passengers = 1;
         ticketClass = 'E';

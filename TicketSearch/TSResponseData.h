@@ -15,4 +15,8 @@
 
 @property (nonatomic, strong) NSData *aResponseData;
 
+@property (nonatomic, strong) NSArray *aCityArray;
+
+
+
 @end

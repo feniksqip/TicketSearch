@@ -29,16 +29,6 @@
                                     <segue destination="Zie-M7-Zd4" kind="presentation" id="Z4Y-u7-aPB"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lvd-tC-nvr">
-                                <rect key="frame" x="128" y="125" width="116" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="58c-Xv-cdi">
-                                <rect key="frame" x="87" y="168" width="208" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="leavingFrom:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcI-Tv-AvI">
                                 <rect key="frame" x="12" y="128" width="98" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -86,10 +76,29 @@
                                 </connections>
                             </stepper>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ltw-QY-z13">
-                                <rect key="frame" x="285" y="124" width="133" height="30"/>
+                                <rect key="frame" x="261" y="124" width="133" height="30"/>
                                 <state key="normal" title="Leaving From"/>
                                 <connections>
-                                    <segue destination="eQb-PH-Jaz" kind="presentation" id="llG-jN-g0g"/>
+                                    <segue destination="eQb-PH-Jaz" kind="show" identifier="leavingFrom" id="CzW-NI-W6D"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Выберите город" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9m-94-whN">
+                                <rect key="frame" x="119" y="128" width="148" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Выберите город" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nw8-tJ-our">
+                                <rect key="frame" x="119" y="172" width="148" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TpE-7G-hAb">
+                                <rect key="frame" x="261" y="168" width="133" height="30"/>
+                                <state key="normal" title="Going To"/>
+                                <connections>
+                                    <segue destination="eQb-PH-Jaz" kind="show" identifier="goingTo" id="nFu-uU-Lo9"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -97,6 +106,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="TicketSearch" id="HtS-fU-Vu1"/>
                     <connections>
+                        <outlet property="goingToLabel" destination="nw8-tJ-our" id="C3w-cS-tCi"/>
+                        <outlet property="leavingFromLabel" destination="o9m-94-whN" id="JqU-Jy-hVr"/>
                         <outlet property="passengersLabel" destination="Tr1-kd-x0Z" id="kjh-10-ACN"/>
                         <outlet property="passengersOutlet" destination="1mJ-9e-UVD" id="c8o-Ws-6Of"/>
                         <outlet property="ticketClassOutlet" destination="tWb-XF-O6w" id="Q7k-RL-eE0"/>
@@ -114,9 +125,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="wi8-8E-9PU">
+                            <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="eQb-PH-Jaz" id="sKU-Fo-NXx"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2uE-L6-1bH">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="2uE-L6-1bH">
+                                <rect key="frame" x="0.0" y="136" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2uE-L6-1bH" id="RJi-Bg-NJR">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -129,7 +148,9 @@
                             <outlet property="delegate" destination="eQb-PH-Jaz" id="bMm-ZU-52P"/>
                         </connections>
                     </tableView>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="searchCityBar" destination="wi8-8E-9PU" id="kyO-qX-k98"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PrN-lX-SVB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -189,4 +210,7 @@
             <point key="canvasLocation" x="173" y="594"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="nFu-uU-Lo9"/>
+    </inferredMetricsTieBreakers>
 </document>

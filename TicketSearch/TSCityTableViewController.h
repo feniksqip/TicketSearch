@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TSCityTableViewController : UITableViewController
+@interface TSCityTableViewController : UITableViewController <UISearchBarDelegate , UITableViewDataSource, UITableViewDelegate> //nsurlconnectiondatadelegate
+
+- (IBAction)dismissCityTVCAction:(id)sender;
+@property (strong, nonatomic) IBOutlet UITableView *searchBar;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchCityBar;
+
+@property (nonatomic, readwrite) NSString *sourceSegueId;
 
 @end

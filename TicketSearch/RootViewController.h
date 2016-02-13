@@ -16,5 +16,7 @@
 - (IBAction)passengersNumberAction:(id)sender;
 @property (weak, nonatomic) IBOutlet UIStepper *passengersOutlet;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *ticketClassOutlet;
+@property (weak, nonatomic) IBOutlet UILabel *leavingFromLabel;
+@property (weak, nonatomic) IBOutlet UILabel *goingToLabel;
 @end
 

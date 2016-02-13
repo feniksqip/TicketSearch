@@ -11,6 +11,7 @@
 @implementation TSResponseData
 
 @synthesize aResponseData;
+@synthesize aCityArray;
 
 +(TSResponseData *)sharedInstance {
 
@@ -30,6 +31,7 @@
     if (self = [super init] ) {
         // init
 //        aResponseData = [NSData new];
+//        aCityArray = [NSArray new];
         
     }
 
