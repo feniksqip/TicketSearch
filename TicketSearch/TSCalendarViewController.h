@@ -1,5 +1,5 @@
 //
-//  CalendarViewController.h
+//  TSCalendarViewController.h
 //  TicketSearch
 //
 //  Created by Andrey on 11.02.16.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CalendarViewController : UIViewController
+@interface TSCalendarViewController : UIViewController
 
-- (IBAction)dismissButtonAction:(id)sender;
+//- (IBAction)dismissButtonAction:(id)sender;
 @end

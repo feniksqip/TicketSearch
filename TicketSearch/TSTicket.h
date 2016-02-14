@@ -15,7 +15,8 @@
 @property (strong, nonatomic) NSString *goingTo; // Set current Location
 
 
-@property (strong, nonatomic) NSDate *departingDate; // 12 months - 1 day
+@property (strong, nonatomic) NSDate *departingDate; // 12 months - 1 day // NSDate
+@property (nonatomic) double departingDateDouble; // 12 months - 1 day // NSDate
 // returningDate
 
 

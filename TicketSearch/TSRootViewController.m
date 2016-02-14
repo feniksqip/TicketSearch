@@ -12,7 +12,10 @@
 #import "TSRequest.h"
 #import "TSCityTableViewController.h"
 
-@interface TSRootViewController ()
+@interface TSRootViewController () {
+
+    UIView *backView;
+}
 
 @end
 
@@ -23,6 +26,8 @@
 @synthesize ticketClassOutlet; // SegmentedControl
 @synthesize leavingFromLabel, goingToLabel; // Cities
 @synthesize findTicketsButton; // Find Button
+@synthesize departureDatePicker; // Select Departure Date (1 year - 1 day, max long)
+@synthesize departureDateLabel; // Show selected Departure Date
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,6 +35,7 @@
     
     // Init params:
     [passengersLabel setText:@"1"];
+//    [departureDateLabel setText:@"Введите дату вылета"];
     
     
     
@@ -57,8 +63,51 @@
     leavingFromLabel.text = aTicket.leavingFrom;
     goingToLabel.text = aTicket.goingTo;
     
-    if ([aTicket.cityCodeLeavingFrom isEqualToString:@""] && [aTicket.cityCodeGoingTo isEqualToString:@""]) {
+    /*
+    double tempVar = [aTicket departingDateDouble];
+    
+    NSNumber *time3 = [NSNumber numberWithDouble:([aTicket departingDateDouble] / 1000 )];
+//                       + 3*3600]; // -3600 = 1 hour
+    NSTimeInterval interval3 = [time3 doubleValue];
+    NSDate *online3 = [NSDate date];
+    online3 = [NSDate dateWithTimeIntervalSince1970:interval3];
+    NSDateFormatter *dateFormatter3 = [[NSDateFormatter alloc] init];
+    [dateFormatter3 setDateFormat:@"dd-MM-yyyy"];
+    NSString *finalString = [dateFormatter3 stringFromDate:online3];
+    
+    
+    
+    NSLog(@"result: %@", [dateFormatter3 stringFromDate:online3]);
+
+    if ( tempVar == 0 ) {
+        departureDateLabel.text = @"Введите дату вылета";
+    } else {
+        departureDateLabel.text = finalString;
+    }
+
+    if ([aTicket.cityCodeLeavingFrom isEqualToString:@""] && [aTicket.cityCodeGoingTo isEqualToString:@""] && (tempVar == 0) ) {
+    
         [findTicketsButton setEnabled:NO];
+        
+    } else {
+        [findTicketsButton setEnabled:YES];
+    }
+
+     */
+    
+    NSDateFormatter *dateFormatter3 = [[NSDateFormatter alloc] init];
+    [dateFormatter3 setDateFormat:@"dd-MM-yyyy"];
+    NSString *finalString = [dateFormatter3 stringFromDate:[aTicket departingDate]];
+    if ( [aTicket departingDate] ) {
+        departureDateLabel.text = finalString;
+    } else {
+        departureDateLabel.text = @"Введите дату вылета";
+    }
+    
+    if ([aTicket.cityCodeLeavingFrom isEqualToString:@""] || [aTicket.cityCodeGoingTo isEqualToString:@""] ) {
+        
+        [findTicketsButton setEnabled:NO];
+        
     } else {
         [findTicketsButton setEnabled:YES];
     }
@@ -130,6 +179,101 @@
 
 - (IBAction)setDepartureDateAction:(id)sender {
     
+    
+//    [departureDatePicker ];
+//    [self setDatePicker];
+    
+    
+//    [self setDatePicker2];
+}
+
+-(void)setDatePicker2 {
+    [self.view setBackgroundColor:[UIColor clearColor]];
+//    UIView *backView
+    backView = [[UIView alloc] initWithFrame:self.view.frame];
+    
+//    backView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.6];
+        backView.backgroundColor = [UIColor blackColor];
+    
+    ///
+    UIToolbar *toolBar=[[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 44)];
+    [toolBar setTintColor:[UIColor yellowColor]]; // grayColor
+    UIBarButtonItem *doneBtn=[[UIBarButtonItem alloc]initWithTitle:@"Done" style:UIBarButtonItemStyleBordered target:self action:@selector(hideDatePicker)];
+    UIBarButtonItem *space=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    [toolBar setItems:[NSArray arrayWithObjects:space,doneBtn, nil]];
+    
+    /////////
+    
+    
+    
+    UIView *wrapperView = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 250, self.view.frame.size.width, 250)];
+    [wrapperView setBackgroundColor:[UIColor whiteColor]];
+    UIDatePicker *picker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 250)];
+    
+//    [picker addTarget:self action:@selector(dueDateChanged:) forControlEvents:UIControlEventValueChanged];
+    [wrapperView addSubview:picker];
+    [wrapperView addSubview:toolBar];
+    [backView addSubview:wrapperView];
+    
+    [self.view addSubview:backView];
+    //[wrapper addSubview:picker];
+    //[self.view addSubview:wrapper];
+}
+
+-(void)hideDatePicker {
+//    backView.hidden = YES;//
+    backView.backgroundColor = [UIColor clearColor];
+    backView.frame = CGRectMake(0, 0, 0, 0);
+    [backView removeFromSuperview];
+    [self.view reloadInputViews];
+//    [backView removeFromSuperview];
+//    [self.view resignFirstResponder];
+}
+
+- (IBAction)departureDatePickerAction:(id)sender {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    
+    [dateFormatter setDateFormat:@"dd-MM-yyyy HH:mm"];
+    
+    NSString *formatedDate = [dateFormatter stringFromDate:self.departureDatePicker.date];
+    
+    self.departureDateLabel.text = formatedDate;
+}
+
+
+-(void)setDatePicker {
+//    UIDatePicker *datePicker = [[UIDatePicker alloc] init];
+//    [self.departureDateLabel setInputView:datePicker];
+    
+//    -(IBAction)showDatePicker:(id)sender
+//    {
+    
+        UIDatePicker* picker = [[UIDatePicker alloc] init];
+        picker.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+        picker.datePickerMode = UIDatePickerModeDate;
+        
+        [picker addTarget:self action:@selector(dueDateChanged:) forControlEvents:UIControlEventValueChanged];
+        CGSize pickerSize = [picker sizeThatFits:CGSizeZero];
+        picker.frame = CGRectMake(0.0, 250, pickerSize.width, 460);
+        //picker.backgroundColor = [UIColor grayColor];
+    
+        [self.view addSubview:picker];
+       // [picker release];
+        
+        
+//    }
+    
+    
+    
+}
+
+-(void) dueDateChanged:(UIDatePicker *)sender {
+    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterLongStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+    
+    //self.myLabel.text = [dateFormatter stringFromDate:[dueDatePickerView date]];
+    NSLog(@"Picked the date %@", [dateFormatter stringFromDate:[sender date]]);
 }
 
 @end

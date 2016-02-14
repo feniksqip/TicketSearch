@@ -18,6 +18,8 @@
 @synthesize cityCodeLeavingFrom, cityCodeGoingTo;
 //@synthesize anAirport;
 
+@synthesize departingDateDouble;
+
 +(TSTicket *)sharedInstance {
     
     static TSTicket *sharedInstance = nil;
@@ -39,9 +41,11 @@
 //        goingTo = @"Paris";
         leavingFrom = @"Введите город отправления";
         goingTo = @"Введите город назначения";
-        departingDate = [NSDate date];
+        departingDate = [NSDate date]; // [NSDate date]
         passengers = 1;
         ticketClass = 'E';
+        
+        departingDateDouble = 0;
         
         cityCodeLeavingFrom = @""; //MOW
         cityCodeGoingTo = @""; //MOW

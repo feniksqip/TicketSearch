@@ -20,5 +20,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *goingToLabel;
 @property (weak, nonatomic) IBOutlet UIButton *findTicketsButton;
 - (IBAction)setDepartureDateAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UIDatePicker *departureDatePicker;
+- (IBAction)departureDatePickerAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *departureDateLabel;
 @end
 
