@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Поиск билетов-->
@@ -17,30 +18,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Город отправления:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcI-Tv-AvI">
-                                <rect key="frame" x="7" y="96" width="166" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="cjr-Db-CYA"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Город отправления:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcI-Tv-AvI">
+                                <rect key="frame" x="217" y="72" width="166" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Город назначения:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFM-Pv-rU0">
-                                <rect key="frame" x="7" y="173" width="166" height="22"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="79x-Xh-cIq"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Город назначения:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFM-Pv-rU0">
+                                <rect key="frame" x="217" y="139" width="166" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tWb-XF-O6w">
-                                <rect key="frame" x="193" y="260" width="120" height="28"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="27" id="Hyf-WX-AOF"/>
-                                    <constraint firstAttribute="width" constant="151" id="q8k-97-br6"/>
-                                </constraints>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tWb-XF-O6w">
+                                <rect key="frame" x="333" y="213" width="120" height="28"/>
                                 <segments>
                                     <segment title="Economy"/>
                                     <segment title="Business"/>
@@ -49,110 +40,151 @@
                                     <action selector="ticketClassAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="dMH-zD-ADy"/>
                                 </connections>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Класс билетов:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ocl-vZ-GFy">
-                                <rect key="frame" x="7" y="263" width="166" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="SHv-gB-LDE"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Количество пассажиров:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzr-D6-t2Q">
-                                <rect key="frame" x="4" y="388" width="169" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tr1-kd-x0Z">
-                                <rect key="frame" x="169" y="381" width="32" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="32" id="7PB-fU-eru"/>
-                                    <constraint firstAttribute="height" constant="32" id="yBO-V4-yPR"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Класс билетов:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ocl-vZ-GFy">
+                                <rect key="frame" x="147" y="216" width="166" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ltw-QY-z13">
-                                <rect key="frame" x="188" y="126" width="130" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Количество пассажиров:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzr-D6-t2Q">
+                                <rect key="frame" x="200" y="320" width="200" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tr1-kd-x0Z">
+                                <rect key="frame" x="232" y="345" width="32" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ltw-QY-z13">
+                                <rect key="frame" x="326" y="101" width="130" height="30"/>
                                 <state key="normal" title="Выбрать город"/>
                                 <connections>
                                     <segue destination="eQb-PH-Jaz" kind="show" identifier="leavingFrom" id="CzW-NI-W6D"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Выберите город" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9m-94-whN">
-                                <rect key="frame" x="7" y="130" width="166" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Выберите город" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9m-94-whN">
+                                <rect key="frame" x="145" y="105" width="166" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="PvY-74-Z7Y"/>
+                                    <constraint firstAttribute="width" constant="166" id="6Fx-an-0QV"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="6Fx-an-0QV"/>
+                                    </mask>
+                                </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Выберите город" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nw8-tJ-our">
-                                <rect key="frame" x="7" y="210" width="166" height="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Выберите город" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nw8-tJ-our">
+                                <rect key="frame" x="145" y="174" width="166" height="22"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="148" id="mZb-dY-kwj"/>
+                                    <constraint firstAttribute="width" constant="166" id="P08-CB-FdD"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="P08-CB-FdD"/>
+                                    </mask>
+                                </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TpE-7G-hAb">
-                                <rect key="frame" x="188" y="205" width="130" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="133" id="ZLD-5i-wAM"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TpE-7G-hAb">
+                                <rect key="frame" x="326" y="169" width="130" height="31"/>
                                 <state key="normal" title="Выбрать город"/>
                                 <connections>
                                     <segue destination="eQb-PH-Jaz" kind="show" identifier="goingTo" id="nFu-uU-Lo9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jS3-8d-B7t">
-                                <rect key="frame" x="112" y="435" width="156" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="156" id="qG7-FF-plR"/>
-                                </constraints>
-                                <state key="normal" title="Найти авиабилеты"/>
-                                <connections>
-                                    <segue destination="E9q-Z4-Npk" kind="show" identifier="searchTickets" id="eQh-Zr-VvX"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Дата вылета:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufK-Xo-gOS">
-                                <rect key="frame" x="7" y="311" width="166" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="ej6-Ih-WmR"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Дата вылета:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufK-Xo-gOS">
+                                <rect key="frame" x="217" y="253" width="166" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Выберите дату" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WxA-mx-G2N">
-                                <rect key="frame" x="7" y="340" width="166" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" misplaced="YES" text="Выберите дату" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WxA-mx-G2N">
+                                <rect key="frame" x="145" y="286" width="166" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="aSA-gI-ef5"/>
+                                    <constraint firstAttribute="width" constant="166" id="KJ0-z8-VaV"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="KJ0-z8-VaV"/>
+                                    </mask>
+                                </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iv4-Ph-ks1">
-                                <rect key="frame" x="193" y="336" width="120" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iv4-Ph-ks1">
+                                <rect key="frame" x="331" y="282" width="120" height="30"/>
                                 <state key="normal" title="Выбрать дату"/>
                                 <connections>
                                     <action selector="setDepartureDateAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="15m-44-4FZ"/>
                                     <segue destination="Zie-M7-Zd4" kind="show" identifier="departingDate" id="Iz4-Ah-wC9"/>
                                 </connections>
                             </button>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="6" translatesAutoresizingMaskIntoConstraints="NO" id="1mJ-9e-UVD">
-                                <rect key="frame" x="206" y="382" width="94" height="29"/>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="6" translatesAutoresizingMaskIntoConstraints="NO" id="1mJ-9e-UVD">
+                                <rect key="frame" x="280" y="346" width="94" height="29"/>
                                 <connections>
                                     <action selector="passengersNumberAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="vhB-Ca-5Ec"/>
                                 </connections>
                             </stepper>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jS3-8d-B7t">
+                                <rect key="frame" x="220" y="396" width="161" height="31"/>
+                                <state key="normal" title="Найти авиабилеты"/>
+                                <connections>
+                                    <segue destination="E9q-Z4-Npk" kind="show" identifier="searchTickets" id="eQh-Zr-VvX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hzr-D6-t2Q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1JP-wf-Ixy"/>
+                            <constraint firstItem="rFM-Pv-rU0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1LR-E5-Qwa"/>
+                            <constraint firstItem="Ocl-vZ-GFy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="152" id="7VS-jk-7pu"/>
+                            <constraint firstItem="TpE-7G-hAb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="105" id="Aqo-Bs-0gc"/>
+                            <constraint firstItem="Ocl-vZ-GFy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="D3V-ll-6PE"/>
+                            <constraint firstItem="ltw-QY-z13" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="37" id="E2b-Nk-wS5"/>
+                            <constraint firstItem="TpE-7G-hAb" firstAttribute="leading" secondItem="nw8-tJ-our" secondAttribute="trailing" constant="15" id="EJS-rc-QVa"/>
+                            <constraint firstItem="rFM-Pv-rU0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="75" id="G24-vo-XCx"/>
+                            <constraint firstItem="TpE-7G-hAb" firstAttribute="centerY" secondItem="nw8-tJ-our" secondAttribute="centerY" id="GTt-f3-Zfy"/>
+                            <constraint firstItem="nw8-tJ-our" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="110" id="IiD-RD-CH3"/>
+                            <constraint firstItem="iv4-Ph-ks1" firstAttribute="centerY" secondItem="WxA-mx-G2N" secondAttribute="centerY" id="JAw-Th-VtV"/>
+                            <constraint firstItem="iv4-Ph-ks1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LHH-NB-iU6"/>
+                            <constraint firstItem="jcI-Tv-AvI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LsK-wf-lud"/>
+                            <constraint firstItem="iv4-Ph-ks1" firstAttribute="leading" secondItem="WxA-mx-G2N" secondAttribute="trailing" constant="20" id="MJe-w2-Ek1"/>
+                            <constraint firstItem="ltw-QY-z13" firstAttribute="centerY" secondItem="o9m-94-whN" secondAttribute="centerY" id="Mrx-Ql-g8n"/>
+                            <constraint firstItem="ltw-QY-z13" firstAttribute="leading" secondItem="o9m-94-whN" secondAttribute="trailing" constant="15" id="QCD-3j-Ecy"/>
+                            <constraint firstItem="1mJ-9e-UVD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Saf-5s-ugT"/>
+                            <constraint firstItem="WxA-mx-G2N" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TFf-2j-S0r"/>
+                            <constraint firstItem="tWb-XF-O6w" firstAttribute="leading" secondItem="Ocl-vZ-GFy" secondAttribute="trailing" constant="20" id="VnV-Uf-a6X"/>
+                            <constraint firstItem="1mJ-9e-UVD" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="282" id="WNS-u3-Ak6"/>
+                            <constraint firstItem="TpE-7G-hAb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YFI-MY-k9G"/>
+                            <constraint firstItem="jcI-Tv-AvI" firstAttribute="leading" secondItem="o9m-94-whN" secondAttribute="trailing" constant="-94" id="YRu-I0-bSr"/>
+                            <constraint firstItem="1mJ-9e-UVD" firstAttribute="centerY" secondItem="Tr1-kd-x0Z" secondAttribute="centerY" id="Z7u-64-eeB"/>
+                            <constraint firstItem="ufK-Xo-gOS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="189" id="b9x-HJ-5Uw"/>
+                            <constraint firstItem="ltw-QY-z13" firstAttribute="leading" secondItem="jcI-Tv-AvI" secondAttribute="trailing" constant="-57" id="baM-i3-NCV"/>
+                            <constraint firstItem="jS3-8d-B7t" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="332" id="cMf-bG-Lqt"/>
+                            <constraint firstItem="Tr1-kd-x0Z" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="281" id="jTN-ac-WIK"/>
+                            <constraint firstItem="tWb-XF-O6w" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="149" id="mud-YT-peS"/>
+                            <constraint firstItem="jcI-Tv-AvI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="mvh-Cz-Oga"/>
+                            <constraint firstItem="ufK-Xo-gOS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="obS-71-SJb"/>
+                            <constraint firstItem="o9m-94-whN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="41" id="p2O-gJ-qp4"/>
+                            <constraint firstItem="1mJ-9e-UVD" firstAttribute="leading" secondItem="Tr1-kd-x0Z" secondAttribute="trailing" constant="16" id="poC-bf-kEw"/>
+                            <constraint firstItem="WxA-mx-G2N" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="222" id="qaP-Xq-IaN"/>
+                            <constraint firstItem="hzr-D6-t2Q" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="256" id="uQa-5h-ukc"/>
+                            <constraint firstItem="iv4-Ph-ks1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="218" id="vVL-0I-PMN"/>
+                            <constraint firstItem="tWb-XF-O6w" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vpZ-ff-ps1"/>
+                            <constraint firstItem="Tr1-kd-x0Z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wII-O2-yuV"/>
+                            <constraint firstItem="jS3-8d-B7t" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="x94-h3-ck5"/>
+                            <constraint firstItem="nw8-tJ-our" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yUg-8d-b3e"/>
+                            <constraint firstItem="tWb-XF-O6w" firstAttribute="centerY" secondItem="Ocl-vZ-GFy" secondAttribute="centerY" id="ybP-bV-XNN"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Поиск билетов" id="HtS-fU-Vu1"/>
                     <connections>
@@ -167,7 +199,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="875" y="64"/>
+            <point key="canvasLocation" x="867" y="-72"/>
         </scene>
         <!--Выбор города-->
         <scene sceneID="d5n-Ye-qxU">
@@ -220,16 +252,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jZQ-Tf-KtN">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jZQ-Tf-KtN">
                                 <rect key="frame" x="40" y="333" width="520" height="2"/>
                             </progressView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Идет поиск билетов ..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BED-iM-LM5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Идет поиск билетов ..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BED-iM-LM5">
                                 <rect key="frame" x="200" y="166" width="200" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="oy7-ua-Zll">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="oy7-ua-Zll">
                                 <rect key="frame" x="290" y="257" width="20" height="20"/>
                                 <color key="color" red="0.25586117949495091" green="0.69322677906626895" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
@@ -238,7 +270,12 @@
                         <constraints>
                             <constraint firstItem="oy7-ua-Zll" firstAttribute="centerX" secondItem="YEE-jk-lxM" secondAttribute="centerX" id="4mP-xH-Xev"/>
                             <constraint firstItem="BED-iM-LM5" firstAttribute="centerX" secondItem="YEE-jk-lxM" secondAttribute="centerX" id="6oY-7t-k78"/>
+                            <constraint firstItem="jZQ-Tf-KtN" firstAttribute="top" secondItem="oy7-ua-Zll" secondAttribute="bottom" constant="56" id="9w0-5S-aah"/>
+                            <constraint firstItem="oy7-ua-Zll" firstAttribute="top" secondItem="BED-iM-LM5" secondAttribute="bottom" constant="51" id="Bvr-yA-fVa"/>
                             <constraint firstItem="jZQ-Tf-KtN" firstAttribute="centerX" secondItem="YEE-jk-lxM" secondAttribute="centerX" id="HjG-KP-ryo"/>
+                            <constraint firstItem="jZQ-Tf-KtN" firstAttribute="leading" secondItem="YEE-jk-lxM" secondAttribute="leadingMargin" constant="20" id="gl2-Tt-Va7"/>
+                            <constraint firstItem="oy7-ua-Zll" firstAttribute="top" secondItem="YEE-jk-lxM" secondAttribute="top" constant="257" id="hId-Ov-QG0"/>
+                            <constraint firstItem="oy7-ua-Zll" firstAttribute="centerX" secondItem="jZQ-Tf-KtN" secondAttribute="centerX" id="j1S-iU-Psz"/>
                         </constraints>
                     </view>
                     <connections>

@@ -56,17 +56,63 @@
     //handle back button
 //    self.navigationItem.backBarButtonItem.target = self;
 //    self.navigationItem.backBarButtonItem.action = @selector(backButtonDidPressed);
-    self.navigationController.navigationItem.backBarButtonItem.target = self;
-    self.navigationController.navigationItem.backBarButtonItem.action = @selector(backButtonDidPressed);
+//    self.navigationController.navigationItem.backBarButtonItem.target = self;
+//    self.navigationController.navigationItem.backBarButtonItem.action = @selector(backButtonDidPressed);
 }
 
--(void)backButtonDidPressed {
+//-(void)backButtonDidPressed {
+//    if (connectionStart) {
+//        [connectionStart cancel];
+//    } else if (connectionStatus) {
+//        [connectionStatus cancel];
+//    }
+//}
+
+-(void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:YES];
+    
+}
+
+//-(void) viewWillDisappear:(BOOL)animated
+//{
+    //    UIViewController *vc = [[self.navigationController viewControllers] firstObject];
+    //
+    //    if ([self.navigationController.viewControllers indexOfObject:self]==NSNotFound) {
+    //        // back button was pressed.  We know this is true because self is no longer
+    //        // in the navigation stack.
+    //    }
+    //    [super viewWillDisappear:animated];
+    //
+    ////    if([vc isEqual: <viewController to check> ])
+    ////    {
+    ////        // code here
+    ////    }
+    //    if ([self.navigationController.viewControllers indexOfObject:self]==NSNotFound)
+    //        [self performSegueWithIdentifier:@"searchTickets" sender:self];
+    //    [super viewWillDisappear:animated];
+//}
+
+-(void) viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:YES];
+    
     if (connectionStart) {
         [connectionStart cancel];
-    } else if (connectionStatus) {
+        connectionStart = nil;
+        
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+        [activityIndicator stopAnimating];
+    }
+//    } else if (connectionStatus) {
+    if (connectionStatus) {
         [connectionStatus cancel];
+        connectionStatus = nil;
+        
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+        [activityIndicator stopAnimating];
     }
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -179,7 +225,7 @@
         //        NSString *escapedURL = [finalStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
-        connectionStatus = [NSURLConnection connectionWithRequest:request delegate:self];
+        connectionStatus = [NSURLConnection connectionWithRequest:request delegate:self]; // asynch request
         
         if (connectionStatus) {
             aResponseData = [NSMutableData new];
@@ -283,6 +329,9 @@
             
             // To next VC previous
             // Go to next VC
+//            if (<#condition#>) {
+//                <#statements#>
+//            }
             UIStoryboard *storyboard = self.storyboard;
             TSFaresTableViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"faresTableViewController"];
             [self.navigationController pushViewController:controller animated:YES];
@@ -328,39 +377,21 @@
 //
 //}
 
--(void) viewWillDisappear:(BOOL)animated
-{
-//    UIViewController *vc = [[self.navigationController viewControllers] firstObject];
-//    
-//    if ([self.navigationController.viewControllers indexOfObject:self]==NSNotFound) {
-//        // back button was pressed.  We know this is true because self is no longer
-//        // in the navigation stack.
+
+//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    if ([[segue identifier] isEqualToString:@"searchTickets"])
+//    {
+//        
+////        TSFaresTableViewController *vc = [segue destinationViewController];
+//        
+//        
+////        [vc setMyObjectHere:object];
 //    }
-//    [super viewWillDisappear:animated];
-//    
-////    if([vc isEqual: <viewController to check> ])
-////    {
-////        // code here
+////    else if ([segue identifier] isEqualToString:@"searchTickets"]) {
+////    
 ////    }
-//    if ([self.navigationController.viewControllers indexOfObject:self]==NSNotFound)
-//        [self performSegueWithIdentifier:@"searchTickets" sender:self];
-//    [super viewWillDisappear:animated];
-}
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"searchTickets"])
-    {
-        
-//        TSFaresTableViewController *vc = [segue destinationViewController];
-        
-        
-//        [vc setMyObjectHere:object];
-    }
-//    else if ([segue identifier] isEqualToString:@"searchTickets"]) {
-//    
-//    }
-
-}
+//
+//}
 
 // searchTickets
 

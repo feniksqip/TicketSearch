@@ -58,6 +58,25 @@
     
 }
 
+-(void) viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:YES];
+    
+    if (connectionFares) {
+        [connectionFares cancel];
+        connectionFares = nil;
+        
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+    }
+    //    } else if (connectionStatus) {
+    if (connectionCodeIATA) {
+        [connectionCodeIATA cancel];
+        connectionCodeIATA = nil;
+        
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+    }
+}
+
 -(void)firstRequestDone {
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -96,6 +115,7 @@
         return [aFinalCompaniesArray count];
     } else {
         return 0;
+
     }
 }
 
@@ -155,6 +175,7 @@
                                       [[[aFinalCompaniesArray objectAtIndex:indexPath.row] objectForKey:@"TotalAmount"] firstObject]];
         cell.textLabel.text = finalLabelString;
     } else {
+//        cell.textLabel.text = @"Рейсов не найдено !";
     }
     
     return cell;

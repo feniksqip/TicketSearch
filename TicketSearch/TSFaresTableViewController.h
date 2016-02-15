@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TSFaresTableViewController : UITableViewController
+@interface TSFaresTableViewController : UITableViewController <NSURLConnectionDelegate>
 
 @end

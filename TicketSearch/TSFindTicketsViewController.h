@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TSFindTicketsViewController : UIViewController
+@interface TSFindTicketsViewController : UIViewController <NSURLConnectionDelegate>
 
 @property (weak, nonatomic) IBOutlet UIProgressView *progressView;
 
