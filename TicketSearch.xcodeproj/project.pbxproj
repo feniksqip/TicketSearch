@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		550C20531C6F9BBD0043AD31 /* TSFindTicketsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 550C20521C6F9BBD0043AD31 /* TSFindTicketsViewController.m */; };
 		552AB5131C6DD9EA00DA0C49 /* TSResponseData.m in Sources */ = {isa = PBXBuildFile; fileRef = 552AB5121C6DD9EA00DA0C49 /* TSResponseData.m */; };
+		553065D81C71BB4300B8D8BC /* TSFaresTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 553065D71C71BB4300B8D8BC /* TSFaresTableViewController.m */; };
+		553065DB1C71D07C00B8D8BC /* TSFaresDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 553065DA1C71D07C00B8D8BC /* TSFaresDetailTableViewController.m */; };
 		55ED32151C6E27BE0092FB93 /* TSCityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55ED32141C6E27BE0092FB93 /* TSCityTableViewController.m */; };
 		55FF07AB1C6D053B0089728A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FF07AA1C6D053B0089728A /* main.m */; };
 		55FF07AE1C6D053B0089728A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FF07AD1C6D053B0089728A /* AppDelegate.m */; };
@@ -45,6 +47,10 @@
 		550C20521C6F9BBD0043AD31 /* TSFindTicketsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSFindTicketsViewController.m; sourceTree = "<group>"; };
 		552AB5111C6DD9E900DA0C49 /* TSResponseData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSResponseData.h; sourceTree = "<group>"; };
 		552AB5121C6DD9EA00DA0C49 /* TSResponseData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSResponseData.m; sourceTree = "<group>"; };
+		553065D61C71BB4300B8D8BC /* TSFaresTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSFaresTableViewController.h; sourceTree = "<group>"; };
+		553065D71C71BB4300B8D8BC /* TSFaresTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSFaresTableViewController.m; sourceTree = "<group>"; };
+		553065D91C71D07C00B8D8BC /* TSFaresDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSFaresDetailTableViewController.h; sourceTree = "<group>"; };
+		553065DA1C71D07C00B8D8BC /* TSFaresDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSFaresDetailTableViewController.m; sourceTree = "<group>"; };
 		55ED32131C6E27BE0092FB93 /* TSCityTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCityTableViewController.h; sourceTree = "<group>"; };
 		55ED32141C6E27BE0092FB93 /* TSCityTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCityTableViewController.m; sourceTree = "<group>"; };
 		55FF07A61C6D053B0089728A /* TicketSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicketSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -190,6 +196,10 @@
 				55ED32141C6E27BE0092FB93 /* TSCityTableViewController.m */,
 				550C20511C6F9BBD0043AD31 /* TSFindTicketsViewController.h */,
 				550C20521C6F9BBD0043AD31 /* TSFindTicketsViewController.m */,
+				553065D61C71BB4300B8D8BC /* TSFaresTableViewController.h */,
+				553065D71C71BB4300B8D8BC /* TSFaresTableViewController.m */,
+				553065D91C71D07C00B8D8BC /* TSFaresDetailTableViewController.h */,
+				553065DA1C71D07C00B8D8BC /* TSFaresDetailTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -324,10 +334,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				553065DB1C71D07C00B8D8BC /* TSFaresDetailTableViewController.m in Sources */,
 				55FF07B11C6D053B0089728A /* TSRootViewController.m in Sources */,
 				55FF07AE1C6D053B0089728A /* AppDelegate.m in Sources */,
 				55FF07E71C6D132A0089728A /* TSTicket.m in Sources */,
 				55FF07DF1C6D0B6E0089728A /* TSRequest.m in Sources */,
+				553065D81C71BB4300B8D8BC /* TSFaresTableViewController.m in Sources */,
 				550C20531C6F9BBD0043AD31 /* TSFindTicketsViewController.m in Sources */,
 				552AB5131C6DD9EA00DA0C49 /* TSResponseData.m in Sources */,
 				55ED32151C6E27BE0092FB93 /* TSCityTableViewController.m in Sources */,

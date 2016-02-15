@@ -28,6 +28,9 @@
 @property (strong, nonatomic) NSString *cityCodeLeavingFrom;
 @property (strong, nonatomic) NSString *cityCodeGoingTo;
 
+
+@property (strong, nonatomic) NSString *responseIdSynonym;
+
 //@property (strong, nonatomic) NSString *anAirport; // not used
 
 /*

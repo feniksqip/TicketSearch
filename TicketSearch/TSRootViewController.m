@@ -111,6 +111,8 @@
     } else {
         [findTicketsButton setEnabled:YES];
     }
+//    [findTicketsButton setEnabled:YES]; //test
+    
 }
 
 - (void)didReceiveMemoryWarning {

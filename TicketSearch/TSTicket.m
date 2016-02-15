@@ -19,6 +19,7 @@
 //@synthesize anAirport;
 
 @synthesize departingDateDouble;
+@synthesize responseIdSynonym;
 
 +(TSTicket *)sharedInstance {
     
@@ -50,6 +51,8 @@
         cityCodeLeavingFrom = @""; //MOW
         cityCodeGoingTo = @""; //MOW
 //        anAirport = @""; // not used
+        
+        responseIdSynonym = @"";
         
     }
     

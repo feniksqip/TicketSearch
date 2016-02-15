@@ -10,4 +10,6 @@
 
 @interface TSFindTicketsViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIProgressView *progressView;
+
 @end
