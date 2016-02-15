@@ -193,6 +193,7 @@
     
     if (connectionFares) {
         aResponseData = [NSMutableData new];
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
         NSLog(@"Connection RequestFares START !");
     }
 }
@@ -358,6 +359,7 @@
             }
         }
         
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
         [self.tableView reloadData];
     }
     
@@ -368,6 +370,7 @@
 
 -(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     NSLog(@"ERROR Connection : %@", [error description]);
 }
 
@@ -398,6 +401,7 @@
     
     if (connectionCodeIATA) {
         aResponseData = [NSMutableData new];
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
         NSLog(@"Connection RequestGetIATA START !");
     }
     

@@ -123,6 +123,7 @@
     
     if (connectionStart) {
         aResponseData = [NSMutableData new];
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
         NSLog(@"Connection StartSearch START !");
     }
 }
@@ -165,6 +166,7 @@
         
         if (connectionStatus) {
             aResponseData = [NSMutableData new];
+            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
             NSLog(@"Connection SearchStatus START !");
         }
     }
@@ -212,10 +214,12 @@
             aProgressTimer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(checkEndCompletion) userInfo:nil repeats:YES];
             
         }
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     } else if (connectionStatus == connection) {
         //[self updateProgressView];
         aCompleted = [[aDic objectForKey:@"Completed"] intValue];
         [self updateProgressView];
+        
     }
     
     
@@ -224,6 +228,7 @@
 
 -(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     NSLog(@"ERROR Connection : %@", [error description]);
 }
 
@@ -241,6 +246,8 @@
             progressView.progress = 1.0;
             [aProgressTimer invalidate];
             aProgressTimer = nil;
+            
+            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
             NSLog(@"Search Completed : 100 percent");
             
             
@@ -296,18 +303,41 @@
 //
 //}
 
-//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    if ([[segue identifier] isEqualToString:@"faresTableViewController"])
+-(void) viewWillDisappear:(BOOL)animated
+{
+    UIViewController *vc = [[self.navigationController viewControllers] firstObject];
+    
+    if ([self.navigationController.viewControllers indexOfObject:self]==NSNotFound) {
+        // back button was pressed.  We know this is true because self is no longer
+        // in the navigation stack.
+    }
+    [super viewWillDisappear:animated];
+    
+//    if([vc isEqual: <viewController to check> ])
 //    {
-//        
-////        TSFaresTableViewController *vc = [segue destinationViewController];
-//        
-//        
-////        [vc setMyObjectHere:object];
+//        // code here
 //    }
-//
-//}
+    if ([self.navigationController.viewControllers indexOfObject:self]==NSNotFound)
+        [self performSegueWithIdentifier:@"searchTickets" sender:self];
+    [super viewWillDisappear:animated];
+}
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"searchTickets"])
+    {
+        
+//        TSFaresTableViewController *vc = [segue destinationViewController];
+        
+        
+//        [vc setMyObjectHere:object];
+    }
+//    else if ([segue identifier] isEqualToString:@"searchTickets"]) {
+//    
+//    }
+
+}
+
+// searchTickets
 
 
 

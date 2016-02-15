@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TSCityTableViewController : UITableViewController <UISearchBarDelegate , UITableViewDataSource, UITableViewDelegate> //nsurlconnectiondatadelegate
+@interface TSCityTableViewController : UITableViewController <UISearchBarDelegate , UITableViewDataSource, UITableViewDelegate, NSURLConnectionDelegate> //nsurlconnectiondatadelegate
 
 - (IBAction)dismissCityTVCAction:(id)sender;
 @property (strong, nonatomic) IBOutlet UITableView *searchBar;

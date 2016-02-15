@@ -117,7 +117,7 @@
                                 </constraints>
                                 <state key="normal" title="Найти авиабилеты"/>
                                 <connections>
-                                    <segue destination="E9q-Z4-Npk" kind="show" id="Tz4-nx-OTf"/>
+                                    <segue destination="E9q-Z4-Npk" kind="show" identifier="searchTickets" id="eQh-Zr-VvX"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Дата вылета:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufK-Xo-gOS">
@@ -338,6 +338,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="CzW-NI-W6D"/>
+        <segue reference="nFu-uU-Lo9"/>
     </inferredMetricsTieBreakers>
 </document>

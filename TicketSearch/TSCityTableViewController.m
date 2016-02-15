@@ -210,6 +210,7 @@
     
     if (connection) {
         aResponseSearchData = [NSMutableData new];
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
         NSLog(@"Connection START !");
     }
     
@@ -277,12 +278,14 @@
     
     //[self.tableView endUpdates];
     
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     [self.tableView reloadData];
     
 }
 
 -(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     NSLog(@"ERROR Connection : %@", [error description]);
 }
 
