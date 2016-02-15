@@ -27,6 +27,9 @@
     NSTimer *aProgressTimer;
     
     BOOL aCompletionStatusEnd;
+    
+    
+
 }
 
 @end
@@ -182,6 +185,7 @@
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     NSError *error = nil;
+//    NSDictionary *aDic = [NSJSONSerialization JSONObjectWithData:aResponseData options:0 error: &error];
     NSDictionary *aDic = [NSJSONSerialization JSONObjectWithData:aResponseData options:0 error: &error];
     // key = Array, 10 objects (Array)
     // key = Count, value = 10 (int)
@@ -243,9 +247,14 @@
             TSTicket *aTicket = [TSTicket sharedInstance];
             [aTicket setResponseIdSynonym:aResponseIdSynonym];
             
+            //[self sendRequestGetIATA];
+            
+            // To next VC previous
+            // Go to next VC
             UIStoryboard *storyboard = self.storyboard;
             TSFaresTableViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"faresTableViewController"];
             [self.navigationController pushViewController:controller animated:YES];
+            
         }
 
 }
@@ -298,5 +307,8 @@
 //    }
 //
 //}
+
+
+
 
 @end

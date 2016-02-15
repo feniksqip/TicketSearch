@@ -50,9 +50,41 @@
         NSLog(@"Exception : %@", [exception description]);
     }
     @finally {
-        return @"";
+        //return @"";
     }
     //return aCompanyName;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    if ([self.tableView.dataSource tableView:tableView numberOfRowsInSection:section] == 0) {
+        return nil;
+    } else {
+        
+        UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(15, 0, self.view.frame.size.width, 30)];
+        // self.view.center.x
+//        UILabel *title = [[UILabel alloc]initWithFrame:CGRectMake(self.view.center.x - 30, 0, self.view.frame.size.width, 30)];
+        UILabel *title = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 30)];
+//        UIView *top = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 312, 5)];
+//        UIView *bottom = [[UIView alloc]initWithFrame:CGRectMake(0, 5, 312, 1)];
+        
+//        [top setBackgroundColor:[UIColor lightGrayColor]];
+//        [bottom setBackgroundColor:[UIColor lightGrayColor]];
+        
+        [title setText:[self.tableView.dataSource tableView:tableView titleForHeaderInSection:section]];
+        [title setTextColor:[UIColor darkGrayColor]];
+//        UIFont *fontName = [UIFont fontWithName:@"Cochin-Bold" size:15.0];
+        [title setFont:[UIFont fontWithName:@"Helvetica-Bold" size:15]];
+//        [title setFont:fontName];
+//        [title setTextAlignment:NSTextAlignmentCenter];
+        
+        [headerView addSubview:title];
+//        [headerView addSubview:top];
+//        [headerView addSubview:bottom];
+        
+        return headerView;
+        
+    }
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

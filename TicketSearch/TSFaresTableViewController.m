@@ -23,6 +23,12 @@
     
     NSMutableArray *aFinalCompaniesArray;
     
+    NSURLConnection *connectionCodeIATA;
+    NSMutableArray *aCodeIATArray;
+    
+//    int firstRequestDoneFlag;
+    
+    NSMutableArray *aFinalCompaniesArrayWithCodeName; // bonus
 }
 
 @end
@@ -38,8 +44,38 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    
+//    firstRequestDoneFlag = 0;
     [self sendRequestFares];
+    
+//    while (firstRequestDoneFlag == 0) {
+//        [self sendRequestGetIATA];
+//        firstRequestDoneFlag = 0;
+//    }
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(firstRequestDone)
+                                        name:@"NSURLConnectionDidFinishLoading_sendRequestFares"
+                                               object:nil];
+    
+}
+
+-(void)firstRequestDone {
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+    //    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"First request Done !!!" message:@"Text received ..." delegate:self cancelButtonTitle:@"Done!" otherButtonTitles:nil, nil];
+    //    [alertView show];
+    
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        UIAlertView *theAlert = [[UIAlertView alloc] initWithTitle:@"First request Done !!!"
+//                                                           message:@"Text received ..."
+//                                                          delegate:self
+//                                                 cancelButtonTitle:@"OK"
+//                                                 otherButtonTitles:nil];
+//        [theAlert show];
+//    });
+    
+    // get IATA
+    [self sendRequestGetIATA];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -75,37 +111,51 @@
     
     
     
-    if ( [aFinalCompaniesArray count] != 0) {
-        
-        //Sort Array
-//        for (id obj in [aCompaniesArray objectAtIndex:indexPath.row] objectForKey:@"Fares"]) {
-//            
-//        }
-//        NSArray *numbers = [[aFinalCompaniesArray objectAtIndex:indexPath.row] objectForKey:@"TotalAmount"];
-//        float xmax = -MAXFLOAT;
-//        float xmin = MAXFLOAT;
-//        for (NSNumber *num in numbers) {
-//            float x = num.floatValue;
-//            if (x < xmin) xmin = x;
-//            if (x > xmax) xmax = x;
-//        }
-//        // Quick sort
-//
-        
-        
-        
-        NSString *finalLabelString = [NSString stringWithFormat:@"CompName=%@, minFare=%@",[[aCompaniesArray objectAtIndex:indexPath.row] objectForKey:@"Code"], [[[aFinalCompaniesArray objectAtIndex:indexPath.row] objectForKey:@"TotalAmount"] firstObject]];
-        cell.textLabel.text = finalLabelString;
-        
-        
-        
-//        cell.textLabel.text = [[aFinalCompaniesArray objectAtIndex:indexPath.row] objectForKey:@"Code"];
+//    if ( [aFinalCompaniesArray count] != 0) {
+//        //Sort Array
+////        for (id obj in [aCompaniesArray objectAtIndex:indexPath.row] objectForKey:@"Fares"]) {
+////            
+////        }
+////        NSArray *numbers = [[aFinalCompaniesArray objectAtIndex:indexPath.row] objectForKey:@"TotalAmount"];
+////        float xmax = -MAXFLOAT;
+////        float xmin = MAXFLOAT;
+////        for (NSNumber *num in numbers) {
+////            float x = num.floatValue;
+////            if (x < xmin) xmin = x;
+////            if (x > xmax) xmax = x;
+////        }
+////        // Quick sort
+////
 //        
-    } else {
+//        NSString *finalLabelString = [NSString stringWithFormat:@"CompName=%@, minFare=%@",[[aCompaniesArray objectAtIndex:indexPath.row] objectForKey:@"Code"], [[[aFinalCompaniesArray objectAtIndex:indexPath.row] objectForKey:@"TotalAmount"] firstObject]];
+//        cell.textLabel.text = finalLabelString;
+//    } else {
+//    }
+    
+    
+    if ( [aFinalCompaniesArrayWithCodeName count] != 0) {
+        //Sort Array
+        //        for (id obj in [aCompaniesArray objectAtIndex:indexPath.row] objectForKey:@"Fares"]) {
+        //
+        //        }
+        //        NSArray *numbers = [[aFinalCompaniesArray objectAtIndex:indexPath.row] objectForKey:@"TotalAmount"];
+        //        float xmax = -MAXFLOAT;
+        //        float xmin = MAXFLOAT;
+        //        for (NSNumber *num in numbers) {
+        //            float x = num.floatValue;
+        //            if (x < xmin) xmin = x;
+        //            if (x > xmax) xmax = x;
+        //        }
+        //        // Quick sort
+        //
         
+        // min tarif
+        NSString *finalLabelString = [NSString stringWithFormat:@"%@ : %@",
+                                      [[aFinalCompaniesArrayWithCodeName objectAtIndex:indexPath.row] objectForKey:@"Name"],
+                                      [[[aFinalCompaniesArray objectAtIndex:indexPath.row] objectForKey:@"TotalAmount"] firstObject]];
+        cell.textLabel.text = finalLabelString;
+    } else {
     }
-    
-    
     
     return cell;
 }
@@ -171,7 +221,7 @@
     NSString *aKeyAirlineCode = @"Code";
     NSString *aKeyFares = @"Fares";    //Array , Show min fare
     
-    NSArray *allKeys = [aDic allKeys];
+//    NSArray *allKeys = [aDic allKeys];
     /* //15
      CurrentTime,
      CrossSale,
@@ -194,7 +244,7 @@
     
 //    NSArray *allValues = [aDic allValues];
     
-    
+    if (connectionFares == connection) {
     aCompaniesArray = [aDic objectForKey:aKeyAirlines]; // array
     NSString *aKeyTotalPrice = @"TotalAmount";
     aFinalCompaniesArray = [NSMutableArray new];
@@ -228,14 +278,11 @@
                                      aSortedArray, aKeyTotalPrice,
                                      nil];
         [aFinalCompaniesArray addObject:aCompanyDic];
-        
-        
-
     }
 
     
     
-    
+    }
     
     /*
      {"Id":"d38b689a-bdc5-4e7e-9ce5-5dc592d0476c","IdSynonym":"Tfge4u103Sj1d4","Error":null,"PrivateAirlines":[]}
@@ -270,9 +317,53 @@
      Airlines – массив авиакомпаний (в фрагменте показаны две а/к, с кодами S7 и PS, с каждой из авиакомпаний связана структура данных, в составе которых для вас важнее всего массив Fares – это тарифы (т.е., рейсы по заданному маршруту от данной авиакомпании), стоимость тарифа указывается в поле TotalAmount.
 
      */
+
     
+    else if (connectionCodeIATA == connection) {
+        // aDic = 965 objects
+        // 0 = Code, 1 = Name
+        // Code = 2N; Name = NextJet;
+        
+//        aFinalCompaniesArray - used for get Code-Name
+        
+        
+        NSMutableArray *anIATACodeArray = [NSMutableArray new];
+        NSMutableArray *anIATANameArray = [NSMutableArray new];
+        for (NSDictionary *tempDic in aDic) {
+            [anIATACodeArray addObject:[tempDic objectForKey:@"Code"]];
+            [anIATANameArray addObject:[tempDic objectForKey:@"Name"]];
+        }
+        
+        //        int anIndex = [anIATACodeArray indexOfObjectPassingTest:
+        //         ^(id obj, NSUInteger idx, BOOL *stop) {
+        //             return [obj isEqualToString: @"2N"];
+        //         }];
+        //        NSString *findName = [anIATANameArray objectAtIndex:anIndex];
+        
+        aFinalCompaniesArrayWithCodeName = [NSMutableArray new];
+        
+        for (NSDictionary *tempDic in aFinalCompaniesArray) {
+            NSInteger indexOfTheObject = -1000;
+            indexOfTheObject = [anIATACodeArray indexOfObject:[tempDic objectForKey:@"Code"]];
+            if (indexOfTheObject != -1000) {
+            
+            NSDictionary *aDicWithCodeName = [NSDictionary dictionaryWithObjectsAndKeys:
+                                    [tempDic objectForKey:@"Code"], @"Code",
+                                    [anIATANameArray objectAtIndex:indexOfTheObject], @"Name",
+                                    [tempDic objectForKey:@"TotalAmount"], @"TotalAmount",
+                                    nil];
+         
+            
+            [aFinalCompaniesArrayWithCodeName addObject:aDicWithCodeName];
+            }
+        }
+        
+        [self.tableView reloadData];
+    }
     
-    [self.tableView reloadData];
+//    firstRequestDoneFlag = 1;
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"NSURLConnectionDidFinishLoading_sendRequestFares" object:nil];
+    
 }
 
 -(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
@@ -287,9 +378,31 @@
     {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         TSFaresDetailTableViewController *detailViewController = [segue destinationViewController];
-        detailViewController.aCompanyName = [[aFinalCompaniesArray objectAtIndex:indexPath.row] objectForKey:@"Code"]; //
+//        detailViewController.aCompanyName = [[aFinalCompaniesArray objectAtIndex:indexPath.row] objectForKey:@"Code"]; // CodeName
+        detailViewController.aCompanyName = [[aFinalCompaniesArrayWithCodeName objectAtIndex:indexPath.row] objectForKey:@"Name"]; // CodeName
         detailViewController.aCompanyFaresArray = [[aFinalCompaniesArray objectAtIndex:indexPath.row] objectForKey:@"TotalAmount"];
     }
 }
+
+-(void)sendRequestGetIATA {
+    // https://www.anywayanyday.com/Controller/UserFuncs/BackOffice/GetAirlines/
+    NSString *str = @"https://www.anywayanyday.com/Controller/UserFuncs/BackOffice/GetAirlines/";
+    TSTicket *aTicket = [TSTicket sharedInstance];
+    
+    NSURL *url = [NSURL URLWithString:str];
+    
+    //        NSString *escapedURL = [finalStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    connectionCodeIATA = [NSURLConnection connectionWithRequest:request delegate:self];
+    
+    if (connectionCodeIATA) {
+        aResponseData = [NSMutableData new];
+        NSLog(@"Connection RequestGetIATA START !");
+    }
+    
+    
+}
+
 
 @end
