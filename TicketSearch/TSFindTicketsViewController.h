@@ -12,4 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UIProgressView *progressView;
 
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UILabel *findTicketsLabel;
 @end

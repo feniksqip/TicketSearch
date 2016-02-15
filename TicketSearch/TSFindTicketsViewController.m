@@ -36,6 +36,8 @@
 
 @implementation TSFindTicketsViewController
 @synthesize progressView;
+@synthesize activityIndicator;
+@synthesize findTicketsLabel;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -50,6 +52,20 @@
     
     
     [self sendRequestStartSearch];
+    
+    //handle back button
+//    self.navigationItem.backBarButtonItem.target = self;
+//    self.navigationItem.backBarButtonItem.action = @selector(backButtonDidPressed);
+    self.navigationController.navigationItem.backBarButtonItem.target = self;
+    self.navigationController.navigationItem.backBarButtonItem.action = @selector(backButtonDidPressed);
+}
+
+-(void)backButtonDidPressed {
+    if (connectionStart) {
+        [connectionStart cancel];
+    } else if (connectionStatus) {
+        [connectionStatus cancel];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -123,6 +139,7 @@
     
     if (connectionStart) {
         aResponseData = [NSMutableData new];
+        [activityIndicator startAnimating];
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
         NSLog(@"Connection StartSearch START !");
     }
@@ -166,6 +183,7 @@
         
         if (connectionStatus) {
             aResponseData = [NSMutableData new];
+            [activityIndicator startAnimating];
             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
             NSLog(@"Connection SearchStatus START !");
         }
@@ -214,6 +232,8 @@
             aProgressTimer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(checkEndCompletion) userInfo:nil repeats:YES];
             
         }
+        
+        [activityIndicator stopAnimating];
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     } else if (connectionStatus == connection) {
         //[self updateProgressView];
@@ -228,6 +248,7 @@
 
 -(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
+    [activityIndicator stopAnimating];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     NSLog(@"ERROR Connection : %@", [error description]);
 }
@@ -239,7 +260,9 @@
             NSLog(@"aCompleted = %d", aCompleted);
             progressView.progress = (float)(aCompleted/100.0f);
             NSLog(@"progress = %f", progressView.progress);
+            findTicketsLabel.text = [NSString stringWithFormat:@"Идет поиск билетов: %u процентов", aCompleted];
             
+            [progressView setHidden:NO];
             aCompletionStatusEnd = NO;
         }
         else {
@@ -247,9 +270,11 @@
             [aProgressTimer invalidate];
             aProgressTimer = nil;
             
+            [activityIndicator stopAnimating];
             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
             NSLog(@"Search Completed : 100 percent");
-            
+            [progressView setHidden:YES];
+            findTicketsLabel.text = @"Поиск билетов завершен !";
             
             TSTicket *aTicket = [TSTicket sharedInstance];
             [aTicket setResponseIdSynonym:aResponseIdSynonym];
@@ -305,21 +330,21 @@
 
 -(void) viewWillDisappear:(BOOL)animated
 {
-    UIViewController *vc = [[self.navigationController viewControllers] firstObject];
-    
-    if ([self.navigationController.viewControllers indexOfObject:self]==NSNotFound) {
-        // back button was pressed.  We know this is true because self is no longer
-        // in the navigation stack.
-    }
-    [super viewWillDisappear:animated];
-    
-//    if([vc isEqual: <viewController to check> ])
-//    {
-//        // code here
+//    UIViewController *vc = [[self.navigationController viewControllers] firstObject];
+//    
+//    if ([self.navigationController.viewControllers indexOfObject:self]==NSNotFound) {
+//        // back button was pressed.  We know this is true because self is no longer
+//        // in the navigation stack.
 //    }
-    if ([self.navigationController.viewControllers indexOfObject:self]==NSNotFound)
-        [self performSegueWithIdentifier:@"searchTickets" sender:self];
-    [super viewWillDisappear:animated];
+//    [super viewWillDisappear:animated];
+//    
+////    if([vc isEqual: <viewController to check> ])
+////    {
+////        // code here
+////    }
+//    if ([self.navigationController.viewControllers indexOfObject:self]==NSNotFound)
+//        [self performSegueWithIdentifier:@"searchTickets" sender:self];
+//    [super viewWillDisappear:animated];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Поиск билетов-->
@@ -221,18 +220,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jZQ-Tf-KtN">
-                                <rect key="frame" x="40" y="299" width="520" height="2"/>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jZQ-Tf-KtN">
+                                <rect key="frame" x="40" y="333" width="520" height="2"/>
                             </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Идет поиск билетов ..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BED-iM-LM5">
+                                <rect key="frame" x="200" y="166" width="200" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="oy7-ua-Zll">
+                                <rect key="frame" x="290" y="257" width="20" height="20"/>
+                                <color key="color" red="0.25586117949495091" green="0.69322677906626895" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="jZQ-Tf-KtN" firstAttribute="centerX" secondItem="YEE-jk-lxM" secondAttribute="centerX" id="OGw-Ry-lpk"/>
-                            <constraint firstItem="jZQ-Tf-KtN" firstAttribute="centerY" secondItem="YEE-jk-lxM" secondAttribute="centerY" id="gI0-oh-jYm"/>
-                            <constraint firstItem="jZQ-Tf-KtN" firstAttribute="leading" secondItem="YEE-jk-lxM" secondAttribute="leadingMargin" constant="20" id="jyM-C0-Zoa"/>
+                            <constraint firstItem="oy7-ua-Zll" firstAttribute="centerX" secondItem="YEE-jk-lxM" secondAttribute="centerX" id="4mP-xH-Xev"/>
+                            <constraint firstItem="BED-iM-LM5" firstAttribute="centerX" secondItem="YEE-jk-lxM" secondAttribute="centerX" id="6oY-7t-k78"/>
+                            <constraint firstItem="jZQ-Tf-KtN" firstAttribute="centerX" secondItem="YEE-jk-lxM" secondAttribute="centerX" id="HjG-KP-ryo"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="oy7-ua-Zll" id="JrA-oh-Nll"/>
+                        <outlet property="findTicketsLabel" destination="BED-iM-LM5" id="4sM-jm-mH9"/>
                         <outlet property="progressView" destination="jZQ-Tf-KtN" id="9c9-BV-dVX"/>
                     </connections>
                 </viewController>
